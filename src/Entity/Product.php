@@ -41,6 +41,11 @@ class Product
      */
     private $isTop;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $Category;
+
     public function __construct()
     {
         $this->isTop = false;
@@ -107,6 +112,18 @@ class Product
     public function setIsTop(bool $isTop): self
     {
         $this->isTop = $isTop;
+
+        return $this;
+    }
+
+    public function getCategory(): ?string
+    {
+        return $this->Category;
+    }
+
+    public function setCategory(string $Category): self
+    {
+        $this->Category = $Category;
 
         return $this;
     }
