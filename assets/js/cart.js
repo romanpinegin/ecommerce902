@@ -1,3 +1,5 @@
+const $ = require('jquery');
+
 $('.js-add-to-cart').on('click', function (event) {
     let headerCart = $('#header-cart');
 
