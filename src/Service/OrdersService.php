@@ -79,4 +79,14 @@ class OrdersService
         return $orderItem->getOrder();
     }
 
+    public function deleteItem(OrderItem $orderItem): Order
+    {
+        $order = $orderItem->getOrder();
+        $order->removeOrderItem($orderItem);
+        $this->entityManager->remove($orderItem);
+        $this->entityManager->flush();
+
+        return $order;
+    }
+
 }
